@@ -12,8 +12,9 @@
     "deploy": "rm -rf docs && mv dist docs && git add docs && git commit -m 'Deploy to GitHub Pages' && git push"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -26,6 +27,5 @@
     "gh-pages": "^6.1.1",
     "vite": "^5.2.0"
   },
-    "homepage": "https://EthanWu2019.github.io/Blog"
-  
+  "homepage": "https://EthanWu2019.github.io/Blog"
 }

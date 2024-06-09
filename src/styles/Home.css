@@ -1,0 +1,87 @@
+/* Center container to vertically and horizontally center content */
+.center-container {
+    display: grid;
+    place-items: center;
+    height: 100vh; /* Set height to 100% of the viewport height */
+    background: transparent;
+    position: relative; /* Required for overlay */
+    overflow: hidden; /* Hide overflow for animation */
+  }
+  
+  /* Style for the glass effect container */
+  .glass-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style for the heading */
+  .white-text {
+    color: grey;
+    font-size: 300%;
+  }
+  
+  /* Style for the button */
+  .homeButton {
+    color: white;
+    font-size: 150%;
+    border-radius: 60px;
+    height: 80px; /* Adjust height as needed */
+    width: 200px; /* Adjust width as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Set background color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer */
+    position: relative; /* Needed for pseudo-elements */
+    overflow: hidden; /* Hide overflow for animation */
+    transition: background-color 1s ease; /* Smooth background transition */
+  }
+  
+  /* Hover effect */
+  .homeButton::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.8s ease;
+  }
+  
+  .homeButton:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  /* Full screen overlay for click transition effect */
+  .overlay {
+    position: fixed; /* Change to fixed for full-screen coverage */
+    width: 0;
+    height: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 1.7s ease, height 0.9s ease;
+    z-index: 9999; /* Ensure it's on top */
+  }
+  
+  .overlay.active {
+    width: 300%;
+    height: 245%;
+  }
+  
+  .homeButton p {
+    color: rgb(72, 72, 72);
+    margin: 0;
+    z-index: 1; /* Ensure text is above pseudo-elements */
+  }
+  
