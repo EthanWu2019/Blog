@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Blog">
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
